@@ -28,4 +28,30 @@ console.log(org);
 
 console.log(org[2]);
 
-/**very inefficent method, try to do it in 1 loop find both */
+/**very inefficent method, try to do it in 1 loop find both 
+ * 
+ * 
+ * 
+ * <!-- <!DOCTYPE html>
+<html>
+<head>
+<script>
+alert("hi")
+
+  let doit=()=> 
+  {
+   x= document.getElementById("bw").value;
+    if(x>15)
+      alert("Overweight");
+  }
+
+</script>
+</head> 
+
+<body>
+  <input type="number" id="bw" width="6"/>
+  <button type="submit" onclick="doit()">submit the baggage weight in Kgs</button>
+</body>
+</html>
+-->
+*/
