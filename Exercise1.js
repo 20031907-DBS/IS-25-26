@@ -21,7 +21,7 @@ function checkMultiple(howmanytimes){
 
 };
 
-let howmanytimes=100;
+let howmanytimes=1000;
 let org=[];
 checkMultiple(howmanytimes);
 console.log(org);
