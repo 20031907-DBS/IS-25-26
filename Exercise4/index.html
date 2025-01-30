@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+
+function alertTheUser(x,y,c)
+{
+    let org=[];
+    let sum=0;
+    for(i=1;i<=c;i++)
+    {
+    var remainder3= i%x;
+    var remainder5= i%y;
+    if(remainder3==0 || remainder5 ==0)
+    {
+        org.push(i);
+    }
+    
+}
+console.log(org);
+return sumOfAllMultiples(org);
+}
+
+function sumOfAllMultiples(org){
+    let sum=0;
+    for(i=0;i<org.length;i++){
+         sum=org[i]+sum;
+    }
+    console.log("in sumofallMultiples"+ sum);
+    return sum;
+}
+function doIt(){
+  let x= document.getElementById("a").value;
+  let y= document.getElementById("b").value;
+  let c= document.getElementById("l").value;
+  let answer= alertTheUser(x,y,c); 
+    alert(answer);
+}
+
+   </script>
+  </head>
+  <body>
+    <p>Exercise 4, Arrays:</p>
+    <p>Create a page with a button and three input boxes, labelled a, b and l, l should be a large input</p>
+    <p>Create a function to return the sum of all the multiples of a or b in l</p>
+    <p>Call the function and alert the user to the correct answer when they press the button.</p>
+    </p>
+    <p>  </p>
+    <p>input a: <input type="number" id="a" width="3"/></p>
+    <p>input b: <input type="number" id="b" width="3"/></p>
+    <p>input l(should be a larger number): <input type="number" id="l" width="6"/></p>
+    <p>
+      <button type="submit" onclick="doIt()">PressMe!</button></p>
+  </body>
+</html>
