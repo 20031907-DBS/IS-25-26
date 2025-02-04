@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script>
+//this function takes input value from input screen. 
+//using split method puts into array removing the ","
+//using parseInt() to get the integer value into array respectively
+//answer[] has all the values ie factors of the number in a input box 
+function firstfunction(){
+    let r= document.getElementById("a").value;
+    let answer=[];
+    console.log(`r : ${r}`);
+    let t= document.getElementById("b").value;
+    console.log(`t : ${t}`);
+    let input_string1 = r.split(',');
+    let input_string2 = t.split(',');
+    let parsedInteger1 =[];
+    let parsedInteger2 =[];
+    input_string1.forEach(element => {
+      parsedInteger1.push(parseInt(element));
+    });
+    input_string2.forEach(element => {
+      parsedInteger2.push(parseInt(element));
+    });
+   
+  console.log("InputString=> ");
+  console.log(input_string1);
+  console.log(input_string2);
+  console.log("parsedInteger:=> ");
+  console.log(parsedInteger1);
+  console.log(parsedInteger2);
+//Main logic -> 2 array loops iterating over each other and pushing required value to result answer [].
+    parsedInteger1.forEach(e1 => 
+    {
+        parsedInteger2.forEach(e2=>
+            {
+                if(e2%e1 === 0 )
+                {
+                    console.log(`printing inside loop: ${e1} and ${e2}`);
+                    answer.push(e2);
+                }
+            }
+        )
+        
+    });
+     return sumofmultiples(answer);
+}
+//this function : removes duplicates and sums it and returns the sum
+ function sumofmultiples(answer){
+    let something = ()=>{return [...new Set(answer)]};
+    console.log(something());
+    let uniqueArray= something();
+    let sum=0;
+     for(i=0;i<uniqueArray.length;i++){
+         sum=uniqueArray[i]+sum;
+     }
+    
+    console.log(sum);
+     return sum;
+ }
+
+function f5(){
+  alert(firstfunction());
+}
+
+   </script>
+  </head>
+  <body>
+    <p>input a (Enter any two multiples): <input type="text" id="a" width="6"/></p>
+    <p>input l (Enter your numbers): <input type="text" id="b" width="6"/></p>
+    <p>
+      <button type="submit" onclick="f5()">PressMe!</button></p>
+  </body>
+</html>
