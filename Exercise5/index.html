@@ -30,19 +30,31 @@ function firstfunction(){
   console.log(parsedInteger1);
   console.log(parsedInteger2);
 //Main logic -> 2 array loops iterating over each other and pushing required value to result answer [].
-    parsedInteger1.forEach(e1 => 
-    {
-        parsedInteger2.forEach(e2=>
-            {
-                if(e2%e1 === 0 )
-                {
-                    console.log(`printing inside loop: ${e1} and ${e2}`);
-                    answer.push(e2);
-                }
-            }
-        )
+    // parsedInteger1.forEach(e2 => 
+    // {
+    //     parsedInteger2.forEach(e1=>
+    //         {
+    //             if(e2%e1 === 0 )
+    //             {
+    //                 console.log(`printing inside loop: ${e1} and ${e2}`);
+    //                 answer.push(e2);
+    //                 break => unable to use break inside foreach loop
+    //             }
+    //         }
+    //     )
         
-    });
+    // });
+    for (let i=0; i<parsedInteger2.length;i++)
+  {
+  for (let j=0; j<parsedInteger1.length;j++) 
+    {
+     if (parsedInteger2[i]%parsedInteger1[j]===0)
+      {
+        answer.push(parsedInteger2[i]);
+     break;  // we need unique values hence im breaking it as double numbers will be pushed into multiples array if not break 
+      }
+    }
+  }
      return sumofmultiples(answer);
 }
 //this function : removes duplicates and sums it and returns the sum
