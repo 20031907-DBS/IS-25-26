@@ -59,10 +59,8 @@ function firstfunction(){
 }
 //this function : removes duplicates and sums it and returns the sum
  function sumofmultiples(answer){
-    let something = ()=>{return [...new Set(answer)]};
-    console.log(something());
-    let uniqueArray= something();
-    let o= uniqueArray.reduce((sum,num)=>sum+num,0); 
+
+    let o= answer.reduce((sum,num)=>sum+num,0); 
     console.log(o);
      return o;
  }
