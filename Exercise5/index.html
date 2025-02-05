@@ -50,13 +50,9 @@ function firstfunction(){
     let something = ()=>{return [...new Set(answer)]};
     console.log(something());
     let uniqueArray= something();
-    let sum=0;
-     for(i=0;i<uniqueArray.length;i++){
-         sum=uniqueArray[i]+sum;
-     }
-    
-    console.log(sum);
-     return sum;
+    let o= uniqueArray.reduce((sum,num)=>sum+num,0); 
+    console.log(o);
+     return o;
  }
 
 function f5(){
