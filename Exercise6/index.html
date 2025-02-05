@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise 6</title>
+    <script>
+  function f6() {
+    //making the input into int arrays
+  let multiples = [];
+  let a = document.getElementById("a").value;
+  let l = document.getElementById("l").value;
+  let input_string1 = a.split(',');
+    let input_string2 = l.split(',');
+    let parsedInteger1 =[];
+    let parsedInteger2 =[];
+    input_string1.forEach(element => {
+      parsedInteger1.push(parseInt(element));
+    });
+    input_string2.forEach(element => {
+      parsedInteger2.push(parseInt(element));
+    });
+   //two loops to iterate over one another , check if %=0 then break 
+  for (let i=0; i<parsedInteger2.length;i++)
+  {
+  for (let j=0; j<parsedInteger1.length;j++) 
+    {
+     if (parsedInteger2[i]%parsedInteger1[j]===0)
+      {
+     multiples.push(parsedInteger2[i]);
+     break;  // we need unique values hence im breaking it as double numbers will be pushed into multiples array if not break 
+      }
+    }
+  }
+
+   let o= multiples.reduce((sum, num) => sum + num, 0); 
+   alert(o);
+}
+
+    </script>
+</head>
+<body>
+    <button type="submit" onclick="f6()">Press Me</button>
+    <p><input type="text" id="a" width="5"/> : a</p>
+    <p><input type="text" id="l" width="5"/> : l</p>
+</body>
+</html>
