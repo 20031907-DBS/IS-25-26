@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <script>
+        function f7(basket, prices) {
+//add all values from values of basket and price after multiplying it 
+            let totalCost = 0;
+            for (let x in basket) {
+                
+                    totalCost = totalCost + basket[x]*prices[x]; 
+                
+            }
+            return totalCost;
+        }
+
+        function F7_addingprod() {
+//add objects here
+            let basket = {
+                "apple": 3,
+                "banana": 2,
+                "orange": 5
+            };
+
+            let prices = {
+                "apple": 1.2,
+                "banana": 0.5,
+                "orange": 0.75
+            };
+
+            let total = f7(basket, prices);
+            console.log(total);
+            alert(total);
+        }
+    </script>
+</head>
+<body>
+    <button onclick="F7_addingprod()">Press Me</button>
+</body>
+</html>
