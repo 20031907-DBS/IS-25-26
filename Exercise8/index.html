@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercise8</title>
+    <script>
+        // class basket 
+// -> method
+// addItem(product, quant)
+// getCost(price) return cost of it 
+class Basket{
+    static  xyx=23;
+    constructor() {
+        this.range={};
+    }
+    addItem(product,quantity){
+        this.range[product]=quantity; //range[key]=value
+    }
+    getCost(price){
+        //write some switch case later to select price or an array or object of prices list
+        let tc=0;
+        for(let el in this.range){
+            tc+=this.range[el]*price;
+        }
+        return tc;
+    }
+}
+
+let basket = new Basket();
+basket.addItem('banana',12);
+basket.addItem('apple',13);
+basket.addItem('ad',52);
+console.log(basket.range);
+console.log(basket.getCost(2));
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
