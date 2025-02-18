@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Exercise9</title>
+    <script>
+    class Basket{
+    constructor() {
+        this.range={};
+    }
+    addItem(product,quantity){
+        this.range[product]=quantity; 
+    }
+    getCost(prices){
+        let tc=0;
+        for(let el in this.range){
+            tc+=this.range[el]*prices[el];
+        }
+        return tc;
+    }
+}
+
+function doIt(){
+let applequant= document.getElementById("appleid").value;
+let plumquant=  document.getElementById("plumid").value;
+let orangequant= document.getElementById("orangeid").value;
+let greenApplequant=  document.getElementById("greenappleid").value;
+
+let appleprice= document.getElementById("applepriceid").value;
+let plumprice=  document.getElementById("plumpriceid").value;
+let orangeprice= document.getElementById("orangepriceid").value;
+let greenAppleprice=  document.getElementById("greenapplepriceid").value;
+
+let basketobj= new Basket();
+
+basketobj.addItem("apple", applequant);
+basketobj.addItem("plum", plumquant);
+basketobj.addItem("orange", orangequant);
+basketobj.addItem("greenApple", greenApplequant);
+
+let prices = {
+          "apple": appleprice,
+          "plum": plumprice,
+          "orange": orangeprice,
+          "greenApple": greenAppleprice,
+        };
+        let totalCost = basketobj.getCost(prices);
+alert(totalCost);
+}
+
+
+    </script>
+  </head>
+  <body>
+    <p><h3>Fruits Basket Task</h3></p>
+    <p>Apple: Quantity <input  type="number" id="appleid"/><input  type="number" id="applepriceid"/><button type="submit" onclick="doIt()">Add</button></p>
+    <p>plum: Quantity      <input  type="number" id="plumid" /><input  type="number" id="plumpriceid"/><button type="submit" onclick="doIt()">Add</button></p>
+    <p>orange: Quantity <input  type="number" id="orangeid"/><input  type="number" id="orangepriceid"/><button type="submit" onclick="doIt()">Add</button></p>
+    <p>greenApple: Quantity <input  type="number" id="greenappleid"/><input  type="number" id="greenapplepriceid"/><button type="submit" onclick="doIt()">Add</button></p>
+  </body>
+</html>
